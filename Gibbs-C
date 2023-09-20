@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    double deltaH, deltaS, temperature, deltaG;
+
+    // Input values
+    printf("Enter the change in enthalpy (ΔH): ");
+    scanf("%lf", &deltaH);
+
+    printf("Enter the change in entropy (ΔS): ");
+    scanf("%lf", &deltaS);
+
+    printf("Enter the temperature (in Kelvin): ");
+    scanf("%lf", &temperature);
+
+    // Calculate ΔG
+    deltaG = deltaH - temperature * deltaS;
+
+    // Check if the process is spontaneous or not
+    if (deltaG < 0) {
+        printf("The thermodynamic process is spontaneous (favorable).\n");
+    } else if (deltaG > 0) {
+        printf("The thermodynamic process is non-spontaneous (not favorable).\n");
+    } else {
+        printf("The thermodynamic process is at equilibrium.\n");
+    }
+
+    return 0;
+}
